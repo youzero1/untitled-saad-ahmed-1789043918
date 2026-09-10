@@ -1,5 +1,5 @@
 ---
-status: pending
+status: implemented
 title: Multiplication Table Page (default 22, user-changeable)
 ---
 
