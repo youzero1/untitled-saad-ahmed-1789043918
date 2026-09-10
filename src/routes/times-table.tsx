@@ -13,8 +13,8 @@ function TimesTablePage() {
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
-      <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Times table</h1>
-      <p className="mt-2 text-sm text-slate-400">
+      <h1 className="text-3xl font-bold tracking-tight text-text sm:text-4xl">Times table</h1>
+      <p className="mt-2 text-sm text-muted">
         Pick a number to see its full times table, one row at a time.
       </p>
 

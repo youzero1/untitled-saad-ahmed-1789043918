@@ -1,1 +1,86 @@
 @import "tailwindcss";
+
+/* Semantic theme tokens. The active theme is chosen by data-theme on <html>. */
+:root,
+[data-theme="light"] {
+  --app-bg: #f6f7fb;
+  --app-surface: #ffffff;
+  --app-surface-strong: #eef1f7;
+  --app-text: #101828;
+  --app-muted: #5b6478;
+  --app-border: #dfe3ec;
+  --app-accent: #4f46e5;
+  --app-accent-hover: #4338ca;
+  --app-accent-contrast: #ffffff;
+  --app-row-alt: #f4f6fb;
+}
+
+[data-theme="dark"] {
+  --app-bg: #0b1020;
+  --app-surface: #141a2e;
+  --app-surface-strong: #1c2340;
+  --app-text: #f2f5ff;
+  --app-muted: #9aa6c4;
+  --app-border: #2a3352;
+  --app-accent: #818cf8;
+  --app-accent-hover: #a5b4fc;
+  --app-accent-contrast: #10142a;
+  --app-row-alt: #182041;
+}
+
+[data-theme="ocean"] {
+  --app-bg: #041f33;
+  --app-surface: #06304c;
+  --app-surface-strong: #0a3f61;
+  --app-text: #eaf7ff;
+  --app-muted: #8fc3de;
+  --app-border: #12557f;
+  --app-accent: #38bdf8;
+  --app-accent-hover: #7dd3fc;
+  --app-accent-contrast: #04263c;
+  --app-row-alt: #073a5b;
+}
+
+[data-theme="forest"] {
+  --app-bg: #f2f8f1;
+  --app-surface: #ffffff;
+  --app-surface-strong: #e3f0e1;
+  --app-text: #12291c;
+  --app-muted: #4c6c56;
+  --app-border: #cbe0cd;
+  --app-accent: #15803d;
+  --app-accent-hover: #166534;
+  --app-accent-contrast: #ffffff;
+  --app-row-alt: #eaf4e8;
+}
+
+[data-theme="sunset"] {
+  --app-bg: #2b1024;
+  --app-surface: #3d1730;
+  --app-surface-strong: #4f1d3c;
+  --app-text: #ffeef4;
+  --app-muted: #e3a8bd;
+  --app-border: #6a2851;
+  --app-accent: #fb7185;
+  --app-accent-hover: #fda4af;
+  --app-accent-contrast: #34101f;
+  --app-row-alt: #471a37;
+}
+
+@theme inline {
+  --color-bg: var(--app-bg);
+  --color-surface: var(--app-surface);
+  --color-surface-strong: var(--app-surface-strong);
+  --color-text: var(--app-text);
+  --color-muted: var(--app-muted);
+  --color-border: var(--app-border);
+  --color-accent: var(--app-accent);
+  --color-accent-hover: var(--app-accent-hover);
+  --color-accent-contrast: var(--app-accent-contrast);
+  --color-row-alt: var(--app-row-alt);
+}
+
+html {
+  background-color: var(--app-bg);
+  color-scheme: light dark;
+}

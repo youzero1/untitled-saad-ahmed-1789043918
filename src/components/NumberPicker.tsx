@@ -48,13 +48,13 @@ export function NumberPicker({
   }
 
   const stepperClass =
-    'flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-lg font-semibold text-slate-200 transition-colors hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40';
+    'flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-surface-strong text-lg font-semibold text-text transition-colors hover:bg-accent hover:text-accent-contrast disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-surface-strong disabled:hover:text-text';
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+    <div className="rounded-2xl border border-border bg-surface p-5">
       <label
         htmlFor="times-table-base"
-        className="block text-xs font-semibold uppercase tracking-wider text-slate-400"
+        className="block text-xs font-semibold uppercase tracking-wider text-muted"
       >
         Times table for
       </label>
@@ -79,7 +79,7 @@ export function NumberPicker({
             max={max}
             onChange={(event) => handleInput(event.target.value)}
             onBlur={handleBlur}
-            className="h-11 w-full min-w-0 rounded-xl border border-white/10 bg-slate-950 px-4 text-center text-lg font-semibold text-white tabular-nums outline-none transition-colors focus:border-indigo-400 sm:w-32"
+            className="h-11 w-full min-w-0 rounded-xl border border-border bg-bg px-4 text-center text-lg font-semibold text-text tabular-nums outline-none transition-colors focus:border-accent sm:w-32"
           />
           <button
             type="button"
@@ -103,8 +103,8 @@ export function NumberPicker({
                 aria-pressed={isActive}
                 className={
                   isActive
-                    ? 'rounded-lg bg-indigo-500 px-3 py-1.5 text-sm font-semibold text-white tabular-nums'
-                    : 'rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm font-medium text-slate-300 tabular-nums transition-colors hover:bg-white/10'
+                    ? 'rounded-lg bg-accent px-3 py-1.5 text-sm font-semibold text-accent-contrast tabular-nums'
+                    : 'rounded-lg border border-border bg-surface-strong px-3 py-1.5 text-sm font-medium text-muted tabular-nums transition-colors hover:text-text'
                 }
               >
                 {preset}
@@ -114,7 +114,7 @@ export function NumberPicker({
         </div>
       </div>
 
-      <p className="mt-3 text-xs text-slate-500">
+      <p className="mt-3 text-xs text-muted">
         Any whole number from {min.toLocaleString('en-US')} to {max.toLocaleString('en-US')}.
       </p>
     </div>

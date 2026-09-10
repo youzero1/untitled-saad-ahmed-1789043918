@@ -10,17 +10,15 @@ export function TimesTable({ base, rowCount = DEFAULT_ROW_COUNT }: TimesTablePro
   const baseLabel = formatNumber(base);
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+    <section className="overflow-hidden rounded-2xl border border-border bg-surface">
       <div className="overflow-x-auto">
         <table className="w-full border-collapse text-left">
-          <caption className="border-b border-white/10 px-4 py-4 text-left text-base font-semibold text-white sm:px-6">
+          <caption className="border-b border-border px-4 py-4 text-left text-base font-semibold text-text sm:px-6">
             The {baseLabel} times table
-            <span className="ml-2 text-sm font-normal text-slate-400">
-              {rows.length} rows
-            </span>
+            <span className="ml-2 text-sm font-normal text-muted">{rows.length} rows</span>
           </caption>
           <thead>
-            <tr className="text-xs uppercase tracking-wider text-slate-400">
+            <tr className="text-xs uppercase tracking-wider text-muted">
               <th scope="col" className="px-4 py-3 font-medium sm:px-6">
                 Row
               </th>
@@ -38,20 +36,20 @@ export function TimesTable({ base, rowCount = DEFAULT_ROW_COUNT }: TimesTablePro
                 key={row.multiplier}
                 className={
                   index % 2 === 1
-                    ? 'border-t border-white/5 bg-white/[0.03]'
-                    : 'border-t border-white/5'
+                    ? 'border-t border-border bg-row-alt'
+                    : 'border-t border-border'
                 }
               >
                 <th
                   scope="row"
-                  className="px-4 py-3 text-sm font-normal text-slate-500 tabular-nums sm:px-6"
+                  className="px-4 py-3 text-sm font-normal text-muted tabular-nums sm:px-6"
                 >
                   {row.multiplier}
                 </th>
-                <td className="whitespace-nowrap px-4 py-3 text-right text-sm text-slate-300 tabular-nums sm:px-6 sm:text-base">
+                <td className="whitespace-nowrap px-4 py-3 text-right text-sm text-muted tabular-nums sm:px-6 sm:text-base">
                   {baseLabel} × {row.multiplier} =
                 </td>
-                <td className="whitespace-nowrap px-4 py-3 text-right text-sm font-semibold text-white tabular-nums sm:px-6 sm:text-base">
+                <td className="whitespace-nowrap px-4 py-3 text-right text-sm font-semibold text-text tabular-nums sm:px-6 sm:text-base">
                   {formatNumber(row.product)}
                 </td>
               </tr>

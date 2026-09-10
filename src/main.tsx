@@ -1,7 +1,11 @@
 import { createRoot } from 'react-dom/client';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
 import { routeTree } from './routeTree.gen';
+import { applyTheme, readStoredTheme } from '@/lib/themes';
 import '@/styles/global.css';
+
+// Apply the stored theme before the first render so there is no flash of the wrong colours.
+applyTheme(readStoredTheme());
 
 const router = createRouter({
   routeTree,
